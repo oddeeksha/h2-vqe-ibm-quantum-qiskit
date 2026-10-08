@@ -4,6 +4,8 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/oddeeksha/h2-vqe-ibm-quantum-qiskit/blob/main/H2_VQE_Project.ipynb)
 
+> **Real hardware run:** executed on IBM Quantum hardware `ibm_kingston` (Job ID `db3i3bsvf2bc73ct776g`), measured energy -1.099869 Ha (error 0.037437 Ha). See [Evidence of Physical Hardware Execution](#5-evidence-of-physical-hardware-execution).
+
 ## 1. Overview and Objectives
 
 The challenge is to estimate the ground-state energy of a molecule using the Variational Quantum Eigensolver (VQE). This project implements the end-to-end VQE pipeline for molecular hydrogen ($\text{H}_2$) at its equilibrium bond length ($0.735\text{ Å}$) in the STO-3G basis.
@@ -80,6 +82,10 @@ Calculations for $\text{H}_2$ at $0.735\text{ Å}$ in the STO-3G basis. All valu
 | **Hardware Error vs. Exact** | **0.037437 Ha** |
 | **Bound Parameters Source** | Optimal COBYLA parameters from ideal simulation |
 | **Historical Job Executions (earlier parameter set)** | `db3hft4lf4us73c1ab90` (-1.0820 Ha), `db3hlu4lf4us73c1an20` (-1.0769 Ha) |
+
+![IBM Quantum job proof](ibm_job_proof.png)
+
+In the notebook, the Step 7a output prints the backend name (`ibm_kingston`) and the Job ID, and the Step 7b chart plots the hardware result.
 
 The submitted Job IDs can be verified on the IBM Quantum Platform jobs page of the account that submitted them. The two historical jobs ran the same circuit with the same parameters and differed by about $0.005\text{ Ha}$, which shows the run-to-run variation of a single hardware evaluation.
 
